@@ -1571,7 +1571,7 @@ local function getCallEnums(source, index, callArg)
             end
             return enums
         end
-    elseif source.special == "Roact.createElement" then
+    elseif source.special == "Roact.createElement" or source.special == "React.createElement" then
         if index == 1 and callArg and callArg.type == "string" then
             local enums = {}
             for _, enum in ipairs(rbxlibs.global["Instance"].value[1].value.enums) do
@@ -1724,7 +1724,7 @@ local function checkRoactElementProperties(args, source, tbl, mark, fields, resu
                 break
             end
         end
-        if special == "Roact.Event" then
+        if special == "Roact.Event" or special == "React.Event" then
             for _, child in ipairs(libObject.child) do
                 if child.kind == "event" and not child.hidden then
                     results[#results+1] = {
@@ -1739,7 +1739,7 @@ local function checkRoactElementProperties(args, source, tbl, mark, fields, resu
                     }
                 end
             end
-        elseif special == "Roact.Change" then
+        elseif special == "Roact.Change" or special == "React.Change" then
             for _, child in ipairs(libObject.child) do
                 if child.kind == "property" and not child.hidden then
                     results[#results+1] = {

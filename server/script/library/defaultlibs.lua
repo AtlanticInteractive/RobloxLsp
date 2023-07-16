@@ -7,6 +7,7 @@ local m = {}
 m.namespace = {
     Enum = true,
     Roact = true,
+    React = true,
     Rodux = true
 }
 

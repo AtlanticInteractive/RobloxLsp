@@ -19,6 +19,9 @@ local librariesTypes = {
     ["Roact"] = {
         textPattern = "%-%-%[%[%s+Packages up the internals of Roact and exposes a public API for it%."
     },
+    ["React"] = {
+        textPattern = "%-%-%[%[%s+Packages up the internals of React and exposes a public API for it%."
+    },
     ["Rodux"] = {
         textPattern = "require%(script%.Store%).-require%(script%.createReducer%).-require%(script%.combineReducers%)"
     },
